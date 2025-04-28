@@ -16,6 +16,19 @@ return new class extends Migration
             $table->string('course_number');
             $table->string('day');
             $table->timestamps();
+            // poniendo las foreign key de area,training_center
+            $table->unsignedBigInteger('area_id')->nullable();
+            $table->unsignedBigInteger('training_center_id')->nullable();
+
+             $table->foreign('area_id')
+             ->references('id')
+             ->on('areas')
+             ->onDelete('cascade');
+
+             $table->foreign('training_center_id')
+             ->references('id')
+             ->on('training_centers')
+             ->onDelete('cascade');
         });
     }
 

@@ -16,6 +16,19 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->timestamps();
+            //aqui debo pasarle laa llaves foraneas de area-id, training_center_id
+            $table->unsignedBigInteger('area_id')->nullable();
+            $table->unsignedBigInteger('training_center_id')->nullable();
+
+             $table->foreign('area_id')
+             ->references('id')
+             ->on('areas')
+             ->onDelete('cascade');
+
+             $table->foreign('training_center_id')
+             ->references('id')
+             ->on('training_centers')
+             ->onDelete('cascade');
         });
     }
 
