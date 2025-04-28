@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email');
             $table->integer('cell_number');
             $table->timestamps();
-            //le estoy pasando las foreign key de course,computer.
+
+            //le estoy pasando las foreign key de course,computer. a la tabla aprendiz
             $table->unsignedBigInteger('course_id')->nullable();
             $table->unsignedBigInteger('computer_id')->nullable();
 
