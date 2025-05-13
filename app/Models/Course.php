@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+$course = new \App\Models\Course;
+$course->getFillable();
 
 class Course extends Model
 {
 
-    protected $fillable = ['course_number', 'day', 'area_id', 'training_center_id'];
+    //esto es asignacion masiva de cursos y dias, lo hago desde tinker, solo la $fillable
+    protected $fillable = ['course_number', 'day'];
 
 
     // Relación: course pertenece a un Area
@@ -36,4 +39,7 @@ class Course extends Model
     {
         return $this->belongsToMany(Teacher::class, 'course_teacher');
     }
+
+
+
 }

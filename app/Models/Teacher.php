@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
+
+
+
+
       // Relación: Teacher pertenece a un Area
       // Relacion 1 a 1
       public function area()
