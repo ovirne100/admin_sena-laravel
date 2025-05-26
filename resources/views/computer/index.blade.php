@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,32 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h1>Formulario computer</h1>
-
-    <br>
-
-    <form action="{{route('computer.store')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-
-            <label for="title">number:</label>
-            <input type="text" id="title" name="number" >
-
-            <br>
-            <br>
-
-            <label for="">brand</label>
-            <input type="text" name="brand">
-
-            <br>
-            <br>
-
-        <button type="submit" class="btn btn-outline-success mb-4 ">guardar</button>
-
-    </form>
-
-
-
-
+<h1>listar las areas</h1>
+{{$computers}}
 </body>
 </html>

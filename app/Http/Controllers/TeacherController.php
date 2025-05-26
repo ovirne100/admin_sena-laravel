@@ -12,7 +12,7 @@ class TeacherController extends Controller
 public function edit($id)
 {
     $teacher = Teacher::findOrFail($id); // Busca el registro
-    return view('teacher.edit', compact('teacher'));
+    return view('teacher.edit', compact('teachers'));
 }
 
   public function index(){
@@ -30,6 +30,6 @@ public function edit($id)
        $teacher->name = $request->name;
        $teacher->email = $request->email;
         $teacher->save();
-        
+
     }
 }

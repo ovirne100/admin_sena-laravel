@@ -2,29 +2,28 @@
 
 @section('content')
     <div class="container mt-4">
-        <h1 class="mb-4">Listado de course</h1>
+        <h1 class="mb-4">Listado de Áreas</h1>
 
-        <a href="{{ route('course.create') }}" class="btn btn-warning btn-sm mb-4">Crear Nuevo curso</a>
+        <a href="{{ route('area.create') }}" class="btn btn-warning btn-sm mb-4">Crear Nueva Área</a>
 
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Nombre_course</th>
-                    <th>dia</th>
+                    <th>Nombre</th>
                     <th>Acciones</th> {{-- Nueva columna para los botones --}}
                 </tr>
             </thead>
             <tbody>
-                @foreach ($courses as $course)
+                @foreach ($areas as $area)
                     <tr>
-                        <td>{{ $course->id }}</td>
-                        <td>{{ $course->name }}</td>
+                        <td>{{ $area->id }}</td>
+                        <td>{{ $area->name }}</td>
                         <td>
 
-                            <a href="{{ route('course.show', $course->id) }}" class="btn btn-info btn-sm">Ver Más</a>
-                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                            <form action="{{ route('course.destroy', $course->id) }}" method="POST" class="d-inline">
+                            <a href="{{ route('area.show', $area->id) }}" class="btn btn-info btn-sm">Ver Más</a>
+                            <a href="{{ route('area.edit', $area->id) }}" class="btn btn-primary btn-sm">Editar</a>
+                            <form action="{{ route('area.destroy', $area->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro?')">Eliminar</button>
