@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email', 80);
             $table->timestamps();
             //aqui debo pasarle laa llaves foraneas de area-id, training_center_id
             $table->unsignedBigInteger('area_id')->nullable();

@@ -19,7 +19,8 @@
                 @foreach ($courses as $course)
                     <tr>
                         <td>{{ $course->id }}</td>
-                        <td>{{ $course->name }}</td>
+                        <td>{{ $course->course_number }}</td>
+                        <td>{{ $course->day }}</td>
                         <td>
 
                             <a href="{{ route('course.show', $course->id) }}" class="btn btn-info btn-sm">Ver Más</a>
